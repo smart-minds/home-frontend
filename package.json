@@ -1,6 +1,6 @@
 {
-  "name": "smartminds",
-  "version": "0.0.0",
+  "name": "smartminds-e-solution-frontend",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
