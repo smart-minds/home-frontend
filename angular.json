@@ -20,11 +20,15 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/manifest.json"
+              "src/favicon.png",
+              "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css",
+              "src/assets/vendors/css/vendor.bundle.base.css",
+              "src/assets/css/style.css",
+              "src/assets/css/animate.css"
             ],
             "scripts": []
           },

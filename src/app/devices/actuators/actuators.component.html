@@ -1,0 +1,105 @@
+        <!-- Commandes -->
+        <div class="page-header">
+          <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+              <i class="mdi mdi-remote"></i>                 
+            </span>
+            <span class="text-grayMat">Commandes</span>
+          </h3>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Lumières</h4>
+                  <!-- Buttons ICI -->
+                 <div class="template-demo d-flex justify-content-around flex-nowrap mt-4">
+                  <button type="button" 
+                    (click)="lightIsActive = !lightIsActive"
+                    [ngClass]="{'active': lightIsActive}" 
+                    class="btn-sensor btn-sensor-light">
+                    <i class="mdi mdi-lightbulb"></i>                     
+                  </button>
+                    <!-- Special classes made for this type of button : btn-sensor -->
+                  <button type="button" 
+                    (click)="sofaIsActive = !sofaIsActive"
+                    [ngClass]="{'active': sofaIsActive}" 
+                    class="btn-sensor btn-sensor-sofa">
+                    <i class="mdi mdi-sofa"></i>
+                  </button>
+                </div>
+                <div class="template-demo d-flex justify-content-around flex-nowrap mt-4">
+                  <button type="button" 
+                    (click)="kitchenIsActive = !kitchenIsActive"
+                    [ngClass]="{'active': kitchenIsActive}"
+                    class="btn-sensor btn-sensor-kitchen">
+                    <i class="mdi mdi-silverware-variant"></i>
+                  </button>
+                  <button type="button" 
+                    (click)="spotlightIsActive = !spotlightIsActive"
+                    [ngClass]="{'active': spotlightIsActive}"
+                    class="btn-sensor btn-sensor-spotlight">
+                    <i class="mdi mdi-spotlight-beam "></i>                          
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Porte</h4>
+                  <div class="template-demo d-flex justify-content-around flex-nowrap mt-5">
+                    <button type="button"
+                      (click)="doorIsOpen = !doorIsOpen"                    
+                      [ngClass]="{'active': doorIsOpen}"
+                      class="btn-door">
+                      <i class="mdi mdi-lock-open-outline"
+                        *ngIf="doorIsOpen; else doorLockClass">
+                      </i>
+                      <ng-template #doorLockClass>
+                        <i class="mdi mdi-lock-outline"></i>
+                      </ng-template>
+                    </button>
+                  </div>
+                  <div class="template-demo d-flex justify-content-around flex-nowrap pt-3">     
+                    <span style="font-family: Raleway-SemiBold; color: #0aacdc;" class="door-state" 
+                        *ngIf="doorIsOpen; else doorIsNotOpen">
+                      OUVERTE
+                    </span>
+                    <ng-template #doorIsNotOpen>
+                      <span style="font-family: Raleway-SemiBold; color: #0aacdc;" class="door-state">
+                        FERMEE
+                      </span>
+                </ng-template>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Alarme</h4>
+                  <div class="template-demo d-flex justify-content-around flex-nowrap mt-5">
+                    <button type="button" 
+                      (click)="alarmIsOn = !alarmIsOn"
+                      [ngClass]="{'active': alarmIsOn}"
+                      class="btn-alarm btn-alarm-active">
+                      <i class="mdi mdi-bell" *ngIf="alarmIsOn; else alarmOffClass"></i>
+                      <ng-template #alarmOffClass>
+                        <i class="mdi mdi-bell-off"></i>
+                      </ng-template>
+                    </button>
+                  </div>
+                  <div class="template-demo d-flex justify-content-around flex-nowrap pt-3">     
+                    <span *ngIf="alarmIsOn; else alarmIsOff" style="font-family: Raleway-SemiBold; color: #ff90a3;" class="alarm-state">ACTIVEE</span>
+                    <ng-template #alarmIsOff>
+                      <span style="font-family: Raleway-SemiBold; color: #ff90a3;" class="alarm-state">DESACTIVEE</span>
+                    </ng-template>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Fin Commandes--> 
